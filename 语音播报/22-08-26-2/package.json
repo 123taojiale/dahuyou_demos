@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "electron": "^20.1.0",
+    "speak-tts": "^2.0.8"
+  }
+}

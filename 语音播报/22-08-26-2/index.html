@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>22-08-26 语音播报测试</title>
+</head>
+<body>
+  <audio id="audio" controls>
+    <source src="horse.ogg">
+    语音播报测试
+  </audio>
+  <script>
+    console.log('require => ', typeof require, typeof require('speak-tts'))
+    const Speech = require('speak-tts').default
+    const sIns = new Speech()
+    sIns.setLanguage('zh-CN')
+    sIns.init().then(() => {
+      console.log('语音播报初始化完成...')
+    }).catch(() => {
+      console.log('语音播报初始化失败...')
+    })
+    window.sIns = sIns
+    sIns.speak({ text: '语音播报测试' }).then(() => { console.log('完成语音播报') })
+    let audio = window.audio = document.getElementById('audio');
+    // audio.src = url;
+    audio.play();
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>audio 语音播报测试</title>
+</head>
+<body>
+  <audio id="audio" controls>
+    <source src="horse.ogg">
+    语音播报测试
+  </audio>
+  <script>
+    // const content = '测试语音播报';
+    // let url = "http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&text=" + encodeURI(content);
+    let audio = window.audio = document.getElementById('audio');
+    // audio.src = url;
+    audio.play();
+  </script>
+</body>
+</html>
